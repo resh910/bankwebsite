@@ -1,0 +1,511 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <title>edit details</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500);
+body,html {
+  padding-top:20px;
+  margin: 0;
+  height: auto;
+}
+input {
+  border: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+::-webkit-input-placeholder .input-line:focus +::input-placeholder {
+  color: #fff;
+}
+
+.highlight {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  cursor: pointer;
+  transition: color .2s ease;
+}
+
+.highlight:hover {
+  color: #fff;
+  transition: color .2s ease;
+}
+
+.spacing {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  height: 120px;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.65)
+}
+
+.input-line:focus {
+  outline: none;
+  border-color: #fff;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.ghost-round {
+  cursor: pointer;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 25px;
+  color: rgba(255, 255, 255, 0.65);
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  font-size: 19px;
+  font-size: 1.2rem;
+  font-family: roboto;
+  font-weight: 300;
+  line-height: 2.5em;
+  margin-top: auto;
+  margin-bottom: 25px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.ghost-round:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.input-line {
+  background: none;
+  margin-bottom: 10px;
+  line-height: 2.4em;
+  color: #fff;
+  font-family: roboto;
+  font-weight: 300;
+  letter-spacing: 0px;
+  letter-spacing: 0.02rem;
+  font-size: 19px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.input-fields {
+  margin-top: 25px;
+}
+
+.container {
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+
+  height: 50%;
+}
+
+.content {
+  padding-left: 25px;
+  padding-right: 25px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  z-index: 5;
+}
+
+.welcome {
+  font-weight: 200;
+  margin-top: 75px;
+  text-align: center;
+  font-size: 40px;
+  font-size: 2.5rem;
+  letter-spacing: 0px;
+  letter-spacing: 0.05rem;
+}
+
+.subtitle {
+  text-align: center;
+  line-height: 1em;
+  font-weight: 100;
+  letter-spacing: 0px;
+  letter-spacing: 0.02rem;
+}
+
+.menu {
+  color: #fff;
+
+  width: 100%;
+  height: 50px;
+}
+
+.window {
+  z-index: 100;
+  color: #fff;
+  font-family: roboto;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  box-shadow: 0px 15px 50px 10px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  height: 1100px;
+  width: 800px;
+  background: #fff;
+  background: url('https://pexels.imgix.net/photos/27718/pexels-photo-27718.jpg?fit=crop&w=1280&h=823') top left no-repeat;
+}
+
+.overlay {
+  background: -webkit-linear-gradient(#8CA6DB, #B993D6);
+  background: linear-gradient(#8CA6DB, #B993D6);
+  opacity: 0.85;
+  filter: alpha(opacity=85);
+  height: 1100px;
+  position: absolute;
+  width: 800px;
+  z-index: 1;
+}
+
+.bold-line {
+  background: #e7e7e7;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+  width: 100%;
+  height: 360px;
+  z-index: 1;
+  opacity:0.1;
+  background: #e7e7e7;
+  background-size:cover;
+}
+
+.option {
+  margin: 0.3em;
+}
+
+@media (max-width: 500px) {
+  .window {
+    width: 100%;
+    height: 100%;
+  }
+  .overlay {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+	</style>
+    <title>edit details</title>
+  </head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+
+          <div class="col-6 col-xl-2">
+             <img src="{% static 'images/logo.jpg' %}" style="height:40px;width:50px;" >
+            <h1 class="mb-0 site-logo"><a href="index.html" class="h2 mb-0">KERABank<span class="text-primary"></span> </a></h1>
+          </div>
+
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li class="nav-link"> <a href=" ">Home</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-link"><a href=" " >{{user.username}}</a></li>
+                {% endif %}
+                <li class="has-children">
+                  <a href="#about-section" class="nav-link">Branches</a>
+                  <ul class="dropdown">
+                    <li><a href="https://en.wikipedia.org/wiki/Kollam" class="nav-link">Kollam</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Kozhikode" class="nav-link">Kozhikode</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Thrissur" class="nav-link">Thrissur</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Ernakulam" class="nav-link">Ernakulam</a></li>
+                     <li><a href="https://en.wikipedia.org/wiki/Thiruvananthapuram" class="nav-link">Thiruvananthapuram</a></li>
+                  </ul>
+                </li>
+                 <li class="nav-link"><a href="/logout" >Logout</a></li>
+
+                <li class="social"><a href="#contact-section" class="nav-link"><span class="icon-facebook"></span></a></li>
+                <li class="social"><a href="#contact-section" class="nav-link"><span class="icon-twitter"></span></a></li>
+                <li class="social"><a href="#contact-section" class="nav-link"><span class="icon-linkedin"></span></a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a></div>
+
+        </div>
+      </div>
+
+    </header>
+<div class="site-blocks-cover overlay" style="background-image: url({% static 'images/bank.jpg' %});height:1200px;width:auto;" data-aos="fade" id="home-section">
+    <body>
+    <form action=" " method="post">
+    {% csrf_token %}
+   <div class='bold-line' ></div>
+    <div class='container' style="padding-top:90px;padding-bottom:5px;  background-size: 300px 100px;height:auto;">
+      <div class='window' >
+        <div class='overlay'></div>
+          <div class='content' >
+          <div class='welcome'>Edit Details</div>
+          <div class='input-fields'>
+        <span class="details">Name</span>
+        <input type='text' name="first_name"  id="first_name" placeholder='Enter your name' class='input-line full-width'></input>
+        <span class="details">Date of birth</span>
+        <input type='date' name="dateofbirth" id="dateofbirth" placeholder='Date of birth' class='input-line full-width'></input>
+         <span class="details">Age</span>
+        <input type='text' name="age" id="age" placeholder='Enter your age' class='input-line full-width'></input>
+
+              <span class="details">Gender</span><br>
+              <input type = "checkbox" value="Female" name="gender">
+               <label class="main">Female</label></input>
+              <input type = "checkbox" value="Male" name="gender">
+              <label class="main">Male</label></input><br>
+
+              <span class="details">Phone number</span>
+        <input type='text' name="phonenumber" id="phonenumber" placeholder='enter your phone number' class='input-line full-width'></input>
+         <span class="details">Email</span>
+        <input type='email' name="email" id="email" placeholder='enter your email' class='input-line full-width'></input>
+         <span class="details">Address</span>
+        <input type='text' name="address" id="address" placeholder='Enter your address' class='input-line full-width'></input>
+              <br>
+              <div class="row">
+                  <div class="col-md-4">
+                      <span class="details" >District</span>
+      <select name="district"  id="district"  >
+        <option value="1">Thiruvananthapuram</option>
+        <option value="2">Kollam</option>
+        <option value="3">Kozhikode</option>
+        <option value="4">Ernamkulam</option>
+        <option value="5">Thrissur</option>
+          {% for item in district  %}
+            <option value="{{ item.id }}">{{ item.districtname }}</option>
+            {% endfor %}
+
+      </select>
+  </div><br/>
+              <div class="col-md-4" >
+      <span class="details" >Branch</span>
+      <select name="branch" id="branch">
+      <option value="1">Palayam</option>
+      <option value="1" >Pattom</option>
+      <option value="1">Thampanoor</option>
+      <option value="2" >Chavara</option>
+      <option value="2" >Kulasekharapuram</option>
+      <option value="2" >Karunagappally</option>
+      <option value="3" >Thamarassery</option>
+      <option value="3" >Vatakara</option>
+      <option value="3" >Balussery</option>
+      <option value="4" >Aluva</option>
+      <option value="4" >Angamaly</option>
+      <option value="4" >Kochi</option>
+      <option value="4" >North Paravur</option>
+      <option value="5" >Thrissur</option>
+
+        <option value="5" >Koratty</option>
+         {% for item in branch %}
+            <option value="{{ item.dis_id }}">{{ item.brancname }}</option>
+            {% endfor %}
+
+    </select>
+                   </div>
+              </div>
+
+              <br>
+               <span class="details" id="accounttype" >Account Type</span>
+				<select name = "accounttype" id="accountype">
+                <option value = "Current account" name="accountype" >Current account</option>
+                <option value = "Savings account" name="accountype">Savings account</option>
+                <option value = "Fixed deposit" name="accountype">Fixed deposit</option>
+                    <option value = "NRI account" name="accountype">NRI account</option></select>
+          <br><br>
+
+          <span class="details"id="materials" name="materials">Materials provide</span><br>
+          <input type = "checkbox"  value="debit" name="materials">
+              <label class="main">Debit card<br> </label> </input><br>
+          <input type = "checkbox" value="credit" name="materials">
+              <label class="main">Credit card<br> </label> </input><br>
+          <input type = "checkbox" value="cheque" name="materials">
+            <label class="main">Cheque book <br> </label> </input>
+              <br>
+              <div><button class='ghost-round full-width'>Submit</button></div>
+      </div>
+
+    </div>
+  </div>
+ </div>
+</div>
+</form>
+<script>
+
+$(document).ready(function(){
+
+ var district = $("#district");
+ var branch= $("#branch");
+ var $options = branch.find('option');
+ district.on('change',function(){
+    branch.html($options.filter('[value="'+ this.value  +'"]'));
+ }).trigger('change');
+
+
+});
+
+</script>
+
+
+       <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-5">
+                <h2 class="footer-heading mb-4">About Us</h2>
+                <p style="text-align:justify;">Established in 1900 as The KERABank Limited,KERABank Limited had its modest beginning in November 2000 and is currently the oldest private sector bank in Kerala.</p>
+              </div>
+              <div class="col-md-3 ml-auto">
+                <h2 class="footer-heading mb-4">Quick Links</h2>
+                <ul class="list-unstyled">
+                  <li><a href="" class="smoothscroll">Terms</a></li>
+                  <li><a href="" class="smoothscroll">Policy</a></li>
+                  <li><a href="" class="smoothscroll">About Us</a></li>
+                  <li><a href="" class="smoothscroll">Services</a></li>
+                  <li><a href="" class="smoothscroll">Testimonials</a></li>
+                  <li><a href="" class="smoothscroll">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3 footer-social">
+                <h2 class="footer-heading mb-4">Follow Us</h2>
+                <a href="" class="pl-3 pr-3"><span class="icon-facebook"></span></a>
+                <a href="" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                <a href="" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                <a href="" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <h2 class="footer-heading mb-4">Subscribe Newsletter</h2>
+            <form action="#" method="post" class="footer-subscribe">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-primary text-black" type="button" id="button-addon2">Send</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+              <p class="copyright"><small>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved  <a href=" " target="_blank" ></a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small></p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+  </div> <!-- .site-wrap -->
+
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+  <script src="{% static 'js/jquery.sticky.js' %}"></script>
+  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+
+
+</body>
+
+</html>
